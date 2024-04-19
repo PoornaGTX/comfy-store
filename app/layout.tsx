@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import ReduxProvider from '@/redux/provider';
 import './globals.css';
 import Header from '@/components/header';
+import NavBar from '@/components/NavBar';
+import Providers from './providers';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,7 +20,10 @@ export default function RootLayout({
       <body>
         <ReduxProvider>
           <Header />
-          <div className="align-element py-20">{children}</div>
+          <NavBar />
+          <Providers>
+            <div className="align-element py-20">{children}</div>
+          </Providers>
         </ReduxProvider>
       </body>
     </html>
